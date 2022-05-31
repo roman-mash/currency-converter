@@ -1,0 +1,7 @@
+.logo {
+  color: var(--clr-secondary);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+}

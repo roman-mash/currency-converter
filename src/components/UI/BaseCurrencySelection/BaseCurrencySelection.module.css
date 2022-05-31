@@ -1,0 +1,26 @@
+.baseWrapper {
+ display: flex;
+ align-items: center;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--clr-text);
+  margin-right: 15px;
+}
+.baseCurrency {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.baseCurrencyFlag {
+  border: 1px solid var(--clr-grey);
+  margin-right: 10px;
+  height: 30px;
+  width: auto;
+}
+.baseCurrencyName {
+  text-transform: uppercase;
+}
