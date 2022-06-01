@@ -1,0 +1,33 @@
+.item {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid var(--clr-grey);
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--clr-text);
+  transition: all 0.2s linear;
+}
+.item:hover {
+  box-shadow: 0px 3px 15px 0px rgb(0 0 0 / 10%);
+}
+
+.code {
+  min-width: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 100px;
+}
+.description {
+  font-size: 14px;
+  color: var(--clr-text);
+}
+
+.rate {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: bold;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}

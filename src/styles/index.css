@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Comfortaa', cursive;
+  font-feature-settings: 'pnum' on, 'lnum' on;
 }
 :root {
  --clr-main: #002f7d;
@@ -33,4 +34,36 @@ footer {
 h1 {
   font-size: 30px;
   margin-bottom: 40px;
+  display: flex;
+  align-items: baseline;
+}
+.currency-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.info-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.info-block p {
+  margin: 0;
+}
+.input-default {
+  padding: 7px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--clr-grey);
+}
+.flag-ml {
+  margin-left: 15px;
+}
+.flag-mr {
+  margin-right: 10px;
 }

@@ -9,9 +9,24 @@ export default class CurrencyService {
     const response = await axios.get('https://api.exchangerate.host/latest', {
       params: {
         base,
-        places: 2,
+        places: 4,
       },
     });
+    return response;
+  }
+  static async getCurrencyHistoryByCode(base, start_date, end_date, symbols) {
+    const response = await axios.get(
+      'https://api.exchangerate.host/timeseries',
+      {
+        params: {
+          start_date,
+          end_date,
+          base,
+          symbols,
+          places: 4,
+        },
+      }
+    );
     return response;
   }
 }
