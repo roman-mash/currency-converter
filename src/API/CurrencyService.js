@@ -29,4 +29,15 @@ export default class CurrencyService {
     );
     return response;
   }
+  static async getConvertResult(from, to, amount) {
+    const response = await axios.get('https://api.exchangerate.host/convert', {
+      params: {
+        from,
+        to,
+        amount,
+        places: 2,
+      },
+    });
+    return response;
+  }
 }

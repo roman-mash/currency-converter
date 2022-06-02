@@ -7,10 +7,6 @@ import styles from './BaseCurrencySelection.module.css';
 const BaseCurrencySelection = ({ setModal }) => {
   const baseCurrency = useSelector((state) => state.currency.base);
 
-  const handleImgError = (evt) => {
-    evt.target.src = '/img/flags/no-image.png';
-  };
-
   return (
     <div className={styles.baseWrapper}>
       <span className={styles.title}>Base</span>
