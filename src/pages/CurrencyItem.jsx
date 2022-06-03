@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import CurrencyService from '../API/CurrencyService';
 import CurrencyChart from '../components/CurrencyChart';
 import Flag from '../components/UI/Flag/Flag';
+import Loader from '../components/UI/Loader/Loader';
 import { useFetching } from '../hooks/useFetching';
 
 const CurrencyItem = () => {
@@ -13,6 +14,7 @@ const CurrencyItem = () => {
   const todayDate = new Date(Date.now());
   const weekInMs = 604800000;
   const dateWeekAgo = new Date(Date.now() - weekInMs);
+  
   const [fetchCurrencyHistory, isCurrencyHistoryLoading, errorFetch] =
     useFetching(async (id) => {
       const response = await CurrencyService.getCurrencyHistoryByCode(
@@ -37,7 +39,12 @@ const CurrencyItem = () => {
           <Flag code={params.id} moreClass="flag-ml flag-mr" />
           {params.id}
         </h1>
-        <CurrencyChart data={historyRates} code={params.id} />
+        {errorFetch && <h3>Error occured {errorFetch}</h3>}
+        {isCurrencyHistoryLoading ? (
+          <Loader />
+        ) : (
+          <CurrencyChart data={historyRates} code={params.id} />
+        )}
       </div>
     </main>
   );

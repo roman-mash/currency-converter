@@ -1,0 +1,21 @@
+.converter-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.converter-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.convert-splitter {
+  display: block; 
+  margin: 0 15px;
+}
+.convert-result {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+}

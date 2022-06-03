@@ -5,6 +5,7 @@ export default class CurrencyService {
     const response = await axios.get('https://api.exchangerate.host/symbols');
     return response;
   }
+
   static async getCurrencyRates(base) {
     const response = await axios.get('https://api.exchangerate.host/latest', {
       params: {
@@ -14,6 +15,7 @@ export default class CurrencyService {
     });
     return response;
   }
+
   static async getCurrencyHistoryByCode(base, start_date, end_date, symbols) {
     const response = await axios.get(
       'https://api.exchangerate.host/timeseries',
@@ -29,6 +31,7 @@ export default class CurrencyService {
     );
     return response;
   }
+
   static async getConvertResult(from, to, amount) {
     const response = await axios.get('https://api.exchangerate.host/convert', {
       params: {

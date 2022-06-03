@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
+import { formatDataForChart } from '../utils/dataFormatter';
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,7 @@ ChartJS.register(
 
 const CurrencyChart = ({ data, code }) => {
   const baseCurrency = useSelector((state) => state.currency.base);
+  const formatedData = formatDataForChart(data, code);
 
   const options = {
     responsive: true,
@@ -34,16 +36,6 @@ const CurrencyChart = ({ data, code }) => {
       },
     },
   };
-
-  const formatedData = {
-    labels: [],
-    ratesData: [],
-  };
-  Object.entries(data).forEach(([key, value]) => {
-    const formData = new Date(key);
-    formatedData.labels.push(formData.toLocaleDateString());
-    formatedData.ratesData.push(value[code]);
-  });
 
   const dataForChart = {
     labels: formatedData.labels,

@@ -5,3 +5,7 @@
   line-height: 1;
   font-family: 'Montserrat', sans-serif;
 }
+.wrapper {
+  text-decoration: none;
+  display: block;
+}

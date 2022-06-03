@@ -1,10 +1,15 @@
 import React from 'react';
-import styles from './Logo.module.css'
+import { Link } from 'react-router-dom';
+import styles from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <span className={styles.logo}>Currency <br /> Converter</span>
-  )
-}
+    <Link to="/currency" className={styles.wrapper}>
+      <span className={styles.logo}>
+        Currency <br /> Converter
+      </span>
+    </Link>
+  );
+};
 
-export default Logo
+export default Logo;

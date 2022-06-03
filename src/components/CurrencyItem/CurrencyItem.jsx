@@ -5,6 +5,7 @@ import Flag from '../UI/Flag/Flag';
 import styles from './CurrencyItem.module.css';
 
 const CurrencyItem = ({ itemInfo }) => {
+  const baseCurrency = useSelector((state) => state.currency.base);
   const currencies = useSelector((state) => state.currency.list);
 
   return (
@@ -15,7 +16,10 @@ const CurrencyItem = ({ itemInfo }) => {
         <span className={styles.description}>
           {currencies[itemInfo.code].description}
         </span>
-        <span className={styles.rate}>{itemInfo.rate}</span>
+        <span className={styles.rate}>
+          {itemInfo.rate}
+          <span className="text-small">{baseCurrency.toUpperCase()}</span>
+        </span>
       </Link>
     </li>
   );

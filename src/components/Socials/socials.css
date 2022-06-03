@@ -1,0 +1,18 @@
+.socials {
+  display: flex;
+}
+.socials-item {
+  transition: opacity 0.2s linear;
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: center;
+}
+.socials-item:hover {
+  opacity: 0.7;
+}
